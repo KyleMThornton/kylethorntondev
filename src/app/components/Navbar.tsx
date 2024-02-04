@@ -4,12 +4,12 @@ import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [navbarOpacity, setNavbarOpacity] = useState(0);
-  const [navbarHeight, setNavbarHeight] = useState(24);
+  const [navbarHeight, setNavbarHeight] = useState(6);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentOpacity = window.scrollY > 50 ? 1 : 0;
-      const currentHeight = window.scrollY > 50 ? 20 : 24;
+      const currentHeight = window.scrollY > 50 ? 5 : 6;
       setNavbarOpacity(currentOpacity);
       setNavbarHeight(currentHeight);
     };
@@ -23,10 +23,12 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full h-${navbarHeight} transition-height duration-500 ease-in-out flex items-center top-0 text-white`}
+      style={{ height: `${navbarHeight}rem` }}
+      className="fixed w-full transition-height duration-500 ease-in-out flex items-center top-0 text-white"
     >
       <div
-        className={`fixed w-full h-${navbarHeight} h-24 bg-slate-500 -z-10 transition-height transition-opacity duration-500 ease-in-out opacity-${navbarOpacity}`}
+        style={{ height: `${navbarHeight}rem`, opacity: navbarOpacity }}
+        className="fixed w-full transition-height transition-opacity duration-1000 ease-in-out flex items-center top-0 bg-slate-400 -z-10"
       ></div>
       <div className="container flex justify-between align-middle">
         <h2>&lt;KT /&gt;</h2>
