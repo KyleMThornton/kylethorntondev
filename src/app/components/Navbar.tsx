@@ -1,5 +1,9 @@
 "use client";
 
+//TODO: underline on section change
+//TODO: add smooth scroll to section change
+//https://nikolasbarwicki.com/articles/highlight-currently-active-link-in-nextjs-13-with-app-router/
+
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
@@ -28,16 +32,76 @@ export default function Navbar() {
     >
       <div
         style={{ height: `${navbarHeight}rem`, opacity: navbarOpacity }}
-        className="fixed w-full transition-height transition-opacity duration-1000 ease-in-out flex items-center top-0 bg-slate-400 -z-10"
+        className="fixed w-full transition-height transition-opacity duration-500 ease-in-out flex items-center top-0 bg-slate-400 -z-10"
       ></div>
       <div className="container flex justify-between align-middle">
         <h2>&lt;KT /&gt;</h2>
-        <ul className="flex">
-          <li className="px-2">Home</li>
-          <li className="px-2">About</li>
-          <li className="px-2">Projects</li>
-          <li className="px-2">Resume</li>
-          <li className="px-2">Contact</li>
+        <ul className="flex hover:cursor-pointer">
+          <li className="px-2 animated-underline">
+            <a
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById("home");
+                if (element) {
+                  window.scrollTo({
+                    top: element.offsetTop,
+                    behavior: "smooth",
+                  });
+                }
+              }}
+            >
+              Home
+            </a>
+          </li>
+          <li className="px-2 animated-underline">
+            <a
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById("about");
+                if (element) {
+                  window.scrollTo({
+                    top: element.offsetTop,
+                    behavior: "smooth",
+                  });
+                }
+              }}
+            >
+              About
+            </a>
+          </li>
+          <li className="px-2 animated-underline">
+            <a
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById("projects");
+                if (element) {
+                  window.scrollTo({
+                    top: element.offsetTop,
+                    behavior: "smooth",
+                  });
+                }
+              }}
+            >
+              Projects
+            </a>
+          </li>
+          <li className="px-2 animated-underline">Resume</li>
+          <li className="px-2 animated-underline">
+            <a
+              onClick={(e) => {
+                e.preventDefault();
+                const element = document.getElementById("contact");
+                if (element) {
+                  window.scrollTo({
+                    top: element.offsetTop,
+                    behavior: "smooth",
+                  });
+                }
+              }}
+            >
+              Contact
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
