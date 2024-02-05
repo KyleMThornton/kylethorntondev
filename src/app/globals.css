@@ -24,3 +24,7 @@
   left: 10%;
   right: 10%;
 }
+
+button:hover span {
+  transform: rotate(90deg);
+}
