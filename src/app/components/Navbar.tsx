@@ -28,13 +28,13 @@ export default function Navbar() {
   return (
     <nav
       style={{ height: `${navbarHeight}rem` }}
-      className="fixed w-full transition-height duration-500 ease-in-out flex items-center top-0 text-white"
+      className="fixed w-full transition-height duration-500 ease-in-out flex items-center top-0 text-white text-xl z-10"
     >
       <div
         style={{ height: `${navbarHeight}rem`, opacity: navbarOpacity }}
-        className="fixed w-full transition-height transition-opacity duration-500 ease-in-out flex items-center top-0 bg-slate-400 -z-10"
+        className="fixed w-full transition-height transition-opacity duration-500 ease-in-out flex items-center top-0 bg-slate-400"
       ></div>
-      <div className="container flex justify-between align-middle">
+      <div className="container flex justify-between align-middle z-20">
         <h2>&lt;KT /&gt;</h2>
         <ul className="flex hover:cursor-pointer">
           <li className="px-2 animated-underline">
@@ -85,7 +85,6 @@ export default function Navbar() {
               Projects
             </a>
           </li>
-          <li className="px-2 animated-underline">Resume</li>
           <li className="px-2 animated-underline">
             <a
               onClick={(e) => {
